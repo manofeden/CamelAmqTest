@@ -1,0 +1,41 @@
+app:
+  title: «Вебнефть» DMZ Rest API
+  version: 1.0
+
+server:
+  address: 0.0.0.0
+  port: 8080
+  ssl:
+    enabled: ${SERVICE_SSL_ENABLED:true}
+    protocol: ${SERVICE_SSL_PROTOCOL:TLSv1.2}
+    trust-store: ${SERVICE_TRUSTSTORE_PATH:/home/leo/cacerts/client.ts}
+    trust-store-password: ${SERVICE_TRUSTSTORE_PASSWORD:changeit}
+    key-store: ${SERVICE_KEYSTORE_PATH:/home/leo/cacerts/myproject/broker-ssl-amq.jks}
+    key-store-password: ${SERVICE_KEYSTORE_PASSWORD:changeit}
+
+##Camel
+#camel.component:
+#  servlet.mapping:
+#    enabled: true
+#    context-path: /api/*
+
+#AMQ http://broker-amq-4-qrw9b:8161/
+broker:
+  host: ${AMQP_REMOTE_URI:amqps://broker-amq-amqp-ssl-myproject.192.168.99.100.nip.io:443}
+  username: ${AMQP_USER:developer}
+  password: ${AMQP_PASSWORD:changeit}
+
+##Swagger
+#webneft:
+#  api.doc:
+#    host: ${WEBNEFT_API_DOC_HOST:localhost/api}
+#    port: ${WEBNEFT_API_DOC_PORT:8080}
+#    origin: ${EDI_ACCESS_CONTROL_ALLOW_ORIGIN:*}
+#  users:
+#    developer: developer
+#
+##Метрики
+#management:
+#  endpoint.health.enabled: true
+#  endpoints.web.exposure.include: metrics,prometheus,health
+#  server.address: 0.0.0.0

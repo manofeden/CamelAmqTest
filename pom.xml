@@ -20,7 +20,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.boot.version>2.1.8.RELEASE</spring.boot.version>
+        <spring.boot.version>2.5.12</spring.boot.version>
         <fuse.version>7.4.0.fuse-sb2-740019-redhat-00005</fuse.version>
         <pooled-jms-version>1.0.4</pooled-jms-version>
 
